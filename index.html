@@ -1,0 +1,1141 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>MONOCHROME | Fashion Boutique</title>
+<style type="text/css">
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Header Styles */
+#header {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+#header.scrolled {
+    background-color: #000000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.nav-menu {
+    list-style: none;
+}
+
+.nav-menu li {
+    display: inline-block;
+    margin-left: 30px;
+    position: relative;
+}
+
+.nav-menu li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-menu li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+}
+
+.nav-menu li a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+#hero {
+    height: 100vh;
+    background-image: url('file:///C|/Users/DIVYA/OneDrive/Desktop/fashoininsta/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: #ffffff;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-title {
+    font-size: 48px;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    border: 2px solid #ffffff;
+}
+
+.cta-button:hover {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+/* Sliding Galleries */
+.gallery-section {
+    padding: 80px 0;
+    background-color: #f8f8f8;
+    overflow: hidden;
+}
+
+.gallery-container {
+    margin: 40px 0;
+}
+
+.gallery-track {
+    display: flex;
+    width: fit-content;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.track-left {
+    animation-name: scrollLeft;
+}
+
+.track-right {
+    animation-name: scrollRight;
+}
+
+.gallery-item {
+    width: 300px;
+    height: 400px;
+    margin: 0 15px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-info {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    transition: bottom 0.3s ease;
+}
+
+.gallery-item:hover .gallery-info {
+    bottom: 0;
+}
+
+@keyframes scrollLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes scrollRight {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
+/* Category Section Styles */
+.categories-section {
+    padding: 100px 0;
+    background-color: white;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.section-title:after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #000;
+    margin: 20px auto;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 0 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.category-card {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+}
+
+.category-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover .category-image {
+    transform: scale(1.1);
+}
+
+.category-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+}
+
+.category-overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.category-overlay p {
+    font-size: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.category-card:hover .category-overlay p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media screen and (max-width: 768px) {
+    .gallery-item {
+        width: 250px;
+        height: 350px;
+    }
+    
+    .categories-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .gallery-item {
+        width: 200px;
+        height: 300px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* Categories Section */
+.categories {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.categories-container {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.category-card {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+}
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover img {
+    transform: scale(1.1);
+}
+
+.category-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: #ffffff;
+}
+
+/* Enhanced Footer */
+#footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 60px 0 40px;
+}
+
+.footer-container {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-section {
+    padding: 0 20px;
+}
+
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-section h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #ffffff;
+}
+
+.footer-section p {
+    color: #cccccc;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 40px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #cccccc;
+    font-size: 14px;
+}
+
+/* Mobile Menu */
+.mobile-menu-btn {
+    display: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #000000;
+        padding: 20px 0;
+    }
+
+    .nav-menu.active {
+        display: block;
+    }
+
+    .nav-menu li {
+        display: block;
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .gallery-item {
+        flex: 0 0 250px;
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-title {
+        font-size: 28px;
+    }
+
+    .gallery-item {
+        flex: 0 0 200px;
+        height: 300px;
+    }
+
+    .content-container {
+        width: 90%;
+    }
+}
+
+
+
+  /* New Newsletter Section */
+  .newsletter-section {
+            background-color: #f8f8f8;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .newsletter-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .newsletter-button {
+            padding: 15px 30px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .newsletter-button:hover {
+            background-color: #333;
+        }
+
+        /* New Testimonials Section */
+        .testimonials-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background-color: #f8f8f8;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+        }
+</style>
+<script>
+// Add scroll event listener for header background
+window.addEventListener('scroll', function() {
+    const header = document.getElementById('header');
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+// Mobile menu toggle
+document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+    document.querySelector('.nav-menu').classList.toggle('active');
+});
+</script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">FASHIONISM</a>
+            <ul class="nav-menu">
+                <li><a href="home1.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="categaries.html">Categories</a></li>
+                <li><a href="contact us.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Timeless Style for Every Occasion</h1>
+            <p class="hero-subtitle">Where minimalist design meets contemporary fashion</p>
+            <a href="#" class="cta-button">Browse Collection</a>
+        </div>
+    </section>
+
+    
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <h2 class="section-title">Discover by Category</h2>
+        <div class="categories-grid">
+
+            <a href="FEMALE-category.html" class="category-card-link">
+            <div class="category-card">
+                <img src="IMAGES/kendal.jpeg" alt="New Arrivals" class="category-image">
+                <div class="category-overlay">
+                    <h3>WOMEN</h3>
+                    <p>&nbsp;</p>
+                </div>
+            </div>
+            <a href="men-category.html" class="category-card-link">
+                <div class="category-card">
+                    <img src="IMAGES/men casual'.jpeg" alt="Collections" class="category-image">
+                    <div class="category-overlay">
+                        <h3>MEN</h3>
+                        <p>&nbsp;</p>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="kids-category.html" class="category-card-link">
+                <div class="category-card">
+                    <img src="IMAGES/kidsgb.jpeg" alt="Editorial" class="category-image">
+                    <div class="category-overlay">
+                        <h3>KIDS</h3>
+                        <p>&nbsp;</p>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="accessories-category.html" class="category-card-link">
+                <div class="category-card">
+                    <img src="IMAGES/jeveve.jpeg" alt="Accessories" class="category-image">
+                    <div class="category-overlay">
+                        <h3>ACCESSORIES</h3>
+                        <p>Complete your look</p>
+                    </div>
+                </div>
+            </a>
+    </section>
+
+
+    <section class="gallery-section">
+        <h2 class="section-title">Featured Collections</h2>
+        
+        <!-- First Row - Sliding Left -->
+        <div class="gallery-container">
+            <div class="gallery-track track-left">
+                <!-- First Set -->
+                <div class="gallery-item">
+                    <img src="/api/placeholder/300/400" alt="Summer Collection 1">
+                    <div class="gallery-info">
+                        <h3>Summer Vibes</h3>
+                        <p>Light and breezy pieces</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/300/400" alt="Summer Collection 2">
+                    <div class="gallery-info">
+                        <h3>Urban Style</h3>
+                        <p>Street fashion essentials</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/300/400" alt="Summer Collection 3">
+                    <div class="gallery-info">
+                        <h3>Evening Wear</h3>
+                        <p>Elegant evening selections</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/300/400" alt="Summer Collection 4">
+                    <div class="gallery-info">
+                        <h3>Casual Comfort</h3>
+                        <p>Everyday essentials</p>
+                    </div>
+                </div>
+                <!-- Duplicate Set for Seamless Loop -->
+                <div class="gallery-item">
+                    <img src="/api/placeholder/300/400" alt="Summer Collection 1">
+                    <div class="gallery-info">
+                        <h3>Summer Vibes</h3>
+                        <p>Light and breezy pieces</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/300/400" alt="Summer Collection 2">
+                    <div class="gallery-info">
+                        <h3>Urban Style</h3>
+                        <p>Street fashion essentials</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/300/400" alt="Summer Collection 3">
+                    <div class="gallery-info">
+                        <h3>Evening Wear</h3>
+                        <p>Elegant evening selections</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/300/400" alt="Summer Collection 4">
+                    <div class="gallery-info">
+                        <h3>Casual Comfort</h3>
+                        <p>Everyday essentials</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Second Row - Sliding Right -->
+        <div class="gallery-container">
+            <div class="gallery-track track-right">
+                <!-- First Set -->
+                <div class="gallery-item">
+                    <img src="/api/placeholder/300/400" alt="Winter Collection 1">
+                    <div class="gallery-info">
+                        <h3>Winter Warmth</h3>
+                        <p>Cozy winter essentials</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/300/400" alt="Winter Collection 2">
+                    <div class="gallery-info">
+                        <h3>Formal Edit</h3>
+                        <p>Professional attire</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/300/400" alt="Winter Collection 3">
+                    <div class="gallery-info">
+                        <h3>Weekend Style</h3>
+                        <p>Casual weekend looks</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/300/400" alt="Winter Collection 4">
+                    <div class="gallery-info">
+                        <h3>Active Wear</h3>
+                        <p>Performance clothing</p>
+                    </div>
+                </div>
+                <!-- Duplicate Set for Seamless Loop -->
+                <div class="gallery-item">
+                    <img src="/api/placeholder/300/400" alt="Winter Collection 1">
+                    <div class="gallery-info">
+                        <h3>Winter Warmth</h3>
+                        <p>Cozy winter essentials</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/300/400" alt="Winter Collection 2">
+                    <div class="gallery-info">
+                        <h3>Formal Edit</h3>
+                        <p>Professional attire</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/300/400" alt="Winter Collection 3">
+                    <div class="gallery-info">
+                        <h3>Weekend Style</h3>
+                        <p>Casual weekend looks</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/300/400" alt="Winter Collection 4">
+                    <div class="gallery-info">
+                        <h3>Active Wear</h3>
+                        <p>Performance clothing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- New Testimonials Section -->
+     <section class="testimonials-section">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-avatar">
+                    <img src="IMAGES/beutii.jpeg" alt="Customer 1" style="width: 50px; height: 50px; object-fit: cover; border: 2px solid #f0f0f0;">
+                </div>
+                <p class="testimonial-text">"The quality of clothes is exceptional. I love how each piece feels unique yet timeless."</p>
+                <p class="testimonial-author">Sarah Johnson</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-avatar">
+                    <img src="IMAGES/❖ Iᴄᴏɴ Dᴇ Nᴀʀᴜᴛᴏ Uᴢᴜᴍᴀᴋɪ ❖.jpeg" alt="Customer 2" style="width: 50px; height: 50px; object-fit: cover; border: 2px solid #f0f0f0;">
+                </div>
+                <p class="testimonial-text">"FASHIONISM has transformed my wardrobe. Their styling advice is invaluable!"</p>
+                <p class="testimonial-author">Michael Chen</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-avatar">
+                    <img src="IMAGES/kendal.jpeg" alt="Customer 3" style="width: 50px; height: 50px; object-fit: cover; border: 2px solid #f0f0f0;">
+                </div>
+                <p class="testimonial-text">"The sustainable collection is amazing. Fashion with a conscience!"</p>
+                <p class="testimonial-author">Emma Roberts</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <h2 class="section-title">Stay in Style</h2>
+            <p>Subscribe to our newsletter for exclusive offers, style tips, and new arrivals.</p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Enter your email address">
+                <button type="submit" class="newsletter-button">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- [Previous Footer section remains the same] -->
+
+    <script>
+        // Previous JavaScript remains the same
+        
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>FASHIONISM</h4>
+                <p>Where style meets simplicity</p>
+            </div>
+            <div class="footer-section">
+                <h4>Visit Us</h4>
+                <p>Ground Floor, Shop No.8, Kavarana Building<br>
+                    Shri Sai CHS, Gokhale Society<br>
+                    Hindamata Flyover, opposite Gauri Shanker<br>
+                    Parel East, Parel<br>
+                    Mumbai, Maharashtra 400012</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <a href="tel:+919321207722">+91 93212 07722</a><br>
+                    <a href="tel:+912231830957">+91 22318 30957</a><br>
+                    <a href="mailto:fshsm.in@gmail.com">fshsm.in@gmail.com</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 MONOCHROME. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+<script>// Header Scroll Effect
+    const header = document.getElementById('header');
+    let lastScroll = 0;
+    
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        // Add/remove scrolled class for header background
+        if (currentScroll > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+        
+        // Hide/show header on scroll
+        if (currentScroll > lastScroll && currentScroll > 200) {
+            header.style.transform = 'translateY(-100%)';
+        } else {
+            header.style.transform = 'translateY(0)';
+        }
+        
+        lastScroll = currentScroll;
+    });
+    
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            // Optional: Add animation to menu button
+            mobileMenuBtn.classList.toggle('open');
+        });
+    }
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+            navMenu.classList.remove('active');
+            mobileMenuBtn.classList.remove('open');
+        }
+    });
+    
+    // Featured Categories Carousel
+    class Carousel {
+        constructor(container) {
+            this.container = container;
+            this.track = container.querySelector('.gallery-track');
+            this.items = container.querySelectorAll('.gallery-item');
+            this.index = 0;
+            this.isAutoPlaying = true;
+            this.autoPlayInterval = null;
+            
+            this.init();
+        }
+        
+        init() {
+            // Clone items for infinite scroll if needed
+            if (this.items.length < 8) {
+                const clonedItems = Array.from(this.items).map(item => item.cloneNode(true));
+                clonedItems.forEach(item => this.track.appendChild(item));
+            }
+            
+            // Start autoplay
+            this.startAutoPlay();
+            
+            // Pause on hover
+            this.container.addEventListener('mouseenter', () => this.pauseAutoPlay());
+            this.container.addEventListener('mouseleave', () => this.startAutoPlay());
+            
+            // Touch events for mobile
+            this.setupTouchEvents();
+        }
+        
+        startAutoPlay() {
+            if (!this.isAutoPlaying) {
+                this.isAutoPlaying = true;
+                this.autoPlayInterval = setInterval(() => {
+                    this.scroll();
+                }, 3000);
+            }
+        }
+        
+        pauseAutoPlay() {
+            if (this.isAutoPlaying) {
+                this.isAutoPlaying = false;
+                clearInterval(this.autoPlayInterval);
+            }
+        }
+        
+        scroll() {
+            this.index++;
+            this.track.style.transform = `translateX(-${this.index * 100}%)`;
+            this.track.style.transition = 'transform 0.5s ease-in-out';
+            
+            // Reset position if reached end
+            if (this.index >= this.items.length) {
+                setTimeout(() => {
+                    this.index = 0;
+                    this.track.style.transition = 'none';
+                    this.track.style.transform = 'translateX(0)';
+                }, 500);
+            }
+        }
+        
+        setupTouchEvents() {
+            let startX, moveX;
+            
+            this.container.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+                this.pauseAutoPlay();
+            });
+            
+            this.container.addEventListener('touchmove', (e) => {
+                moveX = e.touches[0].clientX;
+                const diff = startX - moveX;
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) {
+                        this.scroll();
+                    } else {
+                        this.index--;
+                        if (this.index < 0) this.index = this.items.length - 1;
+                        this.track.style.transform = `translateX(-${this.index * 100}%)`;
+                    }
+                    startX = moveX;
+                }
+            });
+            
+            this.container.addEventListener('touchend', () => {
+                this.startAutoPlay();
+            });
+        }
+    }
+    
+    // Initialize carousels
+    document.querySelectorAll('.gallery-container').forEach(container => {
+        new Carousel(container);
+    });
+    
+    // Newsletter Subscription
+    const newsletterForm = document.querySelector('.newsletter-form');
+    const newsletterInput = document.querySelector('.newsletter-input');
+    
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = newsletterInput.value.trim();
+            
+            // Basic email validation
+            if (!isValidEmail(email)) {
+                showSubscriptionMessage('Please enter a valid email address', 'error');
+                return;
+            }
+            
+            try {
+                // Simulate API call (replace with actual API endpoint)
+                await subscribeUser(email);
+                showSubscriptionMessage('Thank you for subscribing!', 'success');
+                newsletterInput.value = '';
+            } catch (error) {
+                showSubscriptionMessage('Something went wrong. Please try again later.', 'error');
+            }
+        });
+    }
+    
+    // Helper Functions
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+    
+    function showSubscriptionMessage(message, type) {
+        const messageElement = document.createElement('div');
+        messageElement.className = `subscription-message ${type}`;
+        messageElement.textContent = message;
+        
+        // Remove any existing messages
+        const existingMessage = document.querySelector('.subscription-message');
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+        
+        // Add new message
+        newsletterForm.appendChild(messageElement);
+        
+        // Remove message after 3 seconds
+        setTimeout(() => {
+            messageElement.remove();
+        }, 3000);
+    }
+    
+    async function subscribeUser(email) {
+        // Simulate API call - replace with actual API endpoint
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve({ success: true });
+            }, 1000);
+        });
+    }
+    
+    // Discover by Style Section Animation
+    const categoryCards = document.querySelectorAll('.category-card');
+    
+    const observerOptions = {
+        root: null,
+        threshold: 0.2,
+        rootMargin: '0px'
+    };
+    
+    const categoryObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
+                categoryObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    categoryCards.forEach(card => {
+        categoryObserver.observe(card);
+    });
+    
+    // Add CSS classes for animations
+    const style = document.createElement('style');
+    style.textContent = `
+        .category-card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .category-card.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .subscription-message {
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+        .subscription-message.success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .subscription-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    `;
+    
+    document.head.appendChild(style);</script>

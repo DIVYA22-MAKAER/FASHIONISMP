@@ -1,0 +1,469 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>About Us | Fashionism</title>
+<style type="text/css">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff;
+}
+
+/* Header Styles */
+#header {
+    background-color: #000000;
+    padding: 1.5rem 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 3px;
+    transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-menu li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-menu li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+}
+
+.nav-menu li a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.about-hero {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 200px 0 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-hero h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    animation: fadeInUp 1s ease;
+}
+
+.about-hero p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+    opacity: 0.9;
+    animation: fadeInUp 1s ease 0.2s;
+}
+
+/* Main Sections */
+.section {
+    padding: 100px 0;
+}
+
+.section-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #000000;
+    margin: 1rem auto;
+}
+
+/* Who We Are Grid */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-content {
+    padding: 2rem;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.about-content:hover {
+    transform: translateY(-5px);
+}
+
+.about-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #000000;
+}
+
+.about-content p {
+    color: #333333;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+/* Feature Boxes */
+.feature-box {
+    background-color: #ffffff;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.feature-box h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #000000;
+}
+
+/* Vision Section */
+.vision-section {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.vision-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.vision-content h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.vision-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+/* Approach Grid */
+.approach-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+/* Promise Section */
+.promise-section {
+    background-color: #f8f8f8;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.promise-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Footer */
+#footer {
+    background-color: #000000;
+    color: white;
+    padding: 5rem 0 2rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    padding: 0 2rem;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-section h4 {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.footer-section p, .footer-section a {
+    color: #cccccc;
+    line-height: 1.8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #ffffff;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 4rem;
+    border-top: 1px solid #333;
+}
+
+.copyright p {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .about-hero h1 {
+        font-size: 3rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    .about-grid,
+    .approach-grid,
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    .footer-section {
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">FASHIONISM</a>
+            <ul class="nav-menu">
+                <li><a href="home1.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="categaries.html">Categories</a></li>
+                <li><a href="contact us.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="hero-content">
+            <h1>Beyond Fashion</h1>
+            <p>Discover the art of self-expression through curated collections that define contemporary Indian fashion.</p>
+        </div>
+    </section>
+
+    <!-- Who We Are Section -->
+    <section class="section">
+        <div class="section-container">
+            <h2 class="section-title">Our Story</h2>
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>Heritage & Innovation</h3>
+                    <p>Born in the heart of Mumbai, Fashionism represents the perfect blend of India's rich textile heritage and contemporary global trends. We believe that fashion is more than just clothing—it's a statement of individuality, confidence, and cultural pride.</p>
+                    <p>Our journey began with a simple vision: to make premium fashion accessible to every Indian fashion enthusiast, regardless of their location or lifestyle.</p>
+                </div>
+                <div class="about-content">
+                    <h3>What Sets Us Apart</h3>
+                    <div class="feature-box">
+                        <h4>Curated Excellence</h4>
+                        <p>Every piece in our collection is hand-selected by fashion experts, ensuring premium quality and authentic designs.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Inclusive Fashion</h4>
+                        <p>From traditional wear to contemporary styles, our diverse range caters to every taste, size, and occasion.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Sustainable Style</h4>
+                        <p>We partner with brands that share our commitment to ethical fashion and sustainable practices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="vision-section">
+        <div class="vision-content">
+            <h2>Our Vision</h2>
+            <p>We envision a future where fashion knows no boundaries. Through our platform, we're creating a space where style meets sustainability, tradition embraces modernity, and every individual finds their perfect fashion expression. Our commitment goes beyond clothing—we're building a community that celebrates diversity, creativity, and conscious consumption.</p>
+        </div>
+    </section>
+
+    <!-- Our Approach Section -->
+    <section class="section">
+        <div class="section-container">
+            <h2 class="section-title">The Fashionism Experience</h2>
+            <div class="approach-grid">
+                <div class="feature-box">
+                    <h4>Personal Styling</h4>
+                    <p>Our expert stylists offer personalized recommendations to help you discover your unique style identity.</p>
+                </div>
+                <div class="feature-box">
+                    <h4>Seamless Shopping</h4>
+                    <p>Enjoy a hassle-free shopping experience with secure payments and swift deliveries across India.</p>
+                </div>
+                <div class="feature-box">
+                    <h4>Fashion Community</h4>
+                    <p>Join a vibrant community of fashion enthusiasts, share your style stories, and stay inspired.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promise Section -->
+    <section class="promise-section">
+        <div class="promise-content">
+            <h2 class="section-title">Our Promise</h2>
+            <p>At Fashionism, we promise to be your trusted fashion partner. We're committed to bringing you authentic, quality fashion that empowers you to express your true self. Every interaction with us is an opportunity to experience the joy of discovering your style.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>FASHIONISM</h4>
+                <p>Elevating Indian Fashion</p>
+                <p>Style Without Compromise</p>
+            </div>
+            <div class="footer-section">
+                <h4>Visit Our Flagship Store</h4>
+                <p>Ground Floor, Shop No.8, Kavarana Building<br>
+                    Shri Sai CHS, Gokhale Society<br>
+                    Hindamata Flyover, opposite Gauri Shanker<br>
+                    Parel East, Mumbai 400012</p>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <a href="tel:+919321207722">+91 93212 07722</a>
+                <a href="tel:+912231830957">+91 22318 30957</a>
+                <a href="mailto:fshsm.in@gmail.com">fshsm.in@gmail.com</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 FASHIONISM. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

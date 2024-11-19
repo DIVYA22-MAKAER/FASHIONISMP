@@ -1,0 +1,750 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Contact Us | MONOCHROME</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header id="header">
+            <div class="nav-container">
+                <a href="index.html" class="logo">FASHIONISM</a>
+                <ul class="nav-menu">
+                    <li><a href="home1.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="categaries.html">Categories</a></li>
+                    <li><a href="contact us.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </header>
+
+
+        <section class="category-hero">
+            <div class="hero-content">
+                <h1>Explore Our Collections</h1>
+                <p>Discover curated pieces that define contemporary fashion across all categories</p>
+            </div>
+        </section>
+       <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="filter-container">
+            <button class="filter-button active" data-category="all">All</button>
+            <button class="filter-button" data-category="women">Women</button>
+            <button class="filter-button" data-category="men">Men</button>
+            <button class="filter-button" data-category="kids">Kids</button>
+            <button class="filter-button" data-category="accessories">Accessories</button>
+        </div>
+    </section>
+     <!-- Loading Spinner -->
+     <div class="loading-spinner"></div>
+
+     <!-- Category Grid -->
+     <section class="category-grid">
+         <!-- Women's Categories -->
+         <div class="category-card" data-category="women">
+             <img src="IMAGES/dresses womn.jpeg" alt="Women's Dresses" class="category-image">
+             <div class="category-overlay">
+                 <h3 class="category-title">Dresses</h3>
+                 <p class="category-description">Elegant dresses for every occasion, from casual day wear to evening glamour.</p>
+             </div>
+         </div>
+ 
+         <div class="category-card" data-category="women">
+             <img src="IMAGES/formalwomw.jpeg" alt="Women's Formal" class="category-image">
+             <div class="category-overlay">
+                 <h3 class="category-title">Formal Wear</h3>
+                 <p class="category-description">Sophisticated suits and formal attire for professional excellence.</p>
+             </div>
+         </div>
+ 
+         <!-- Men's Categories -->
+         <div class="category-card" data-category="men">
+             <img src="IMAGES/casual men.jpeg" alt="Men's Casual" class="category-image">
+             <div class="category-overlay">
+                 <h3 class="category-title">Casual Wear</h3>
+                 <p class="category-description">Comfortable and stylish everyday essentials for men.</p>
+             </div>
+         </div>
+ 
+         <div class="category-card" data-category="men">
+             <img src="IMAGES/formalmen.jpeg" alt="Men's Suits" class="category-image">
+             <div class="category-overlay">
+                 <h3 class="category-title">Suits & Blazers</h3>
+                 <p class="category-description">Tailored perfection for the modern gentleman.</p>
+             </div>
+         </div>
+ 
+         <!-- Kids Categories -->
+         <div class="category-card" data-category="kids">
+             <img src="IMAGES/kidscual.jpeg" alt="Kids Casual" class="category-image">
+             <div class="category-overlay">
+                 <h3 class="category-title">Kids Casual</h3>
+                 <p class="category-description">Playful and comfortable clothing for active children.</p>
+             </div>
+         </div>
+ 
+         <div class="category-card" data-category="kids">
+             <img src="IMAGES/kidsgb.jpeg" alt="Kids Formal" class="category-image">
+             <div class="category-overlay">
+                 <h3 class="category-title">Kids Formal</h3>
+                 <p class="category-description">Special occasion outfits for your little ones.</p>
+             </div>
+         </div>
+ 
+         <!-- Accessories Categories -->
+         <div class="category-card" data-category="accessories">
+             <img src="IMAGES/jevelry.jpeg" alt="Jewelry" class="category-image">
+             <div class="category-overlay">
+                 <h3 class="category-title">Jewelry</h3>
+                 <p class="category-description">Timeless pieces to complement any outfit.</p>
+             </div>
+         </div>
+ 
+         <div class="category-card" data-category="accessories">
+             <img src="IMAGES/bag.jpeg" alt="Bags" class="category-image">
+             <div class="category-overlay">
+                 <h3 class="category-title">Bags & Purses</h3>
+                 <p class="category-description">Stylish and functional bags for every occasion.</p>
+             </div>
+         </div>
+ 
+         <!-- No Results Message -->
+         <div class="no-results">No categories found matching your selection.</div>
+     </section>
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h4>FASHIONISM</h4>
+                    <p>Where style meets simplicity</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Visit Us</h4>
+                    <p>Ground Floor, Shop No.8, Kavarana Building<br>
+                        Shri Sai CHS, Gokhale Society<br>
+                        Hindamata Flyover, opposite Gauri Shanker<br>
+                        Parel East, Parel<br>
+                        Mumbai, Maharashtra 400012</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <a href="tel:+919321207722">+91 93212 07722</a><br>
+                    <a href="tel:+912231830957">+91 22318 30957</a><br>
+                    <a href="mailto:fshsm.in@gmail.com">fshsm.in@gmail.com</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 MONOCHROME. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+
+<style>
+/* CSS Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the footer is at the bottom */
+}
+
+.container {
+    flex: 1; /* Allows the main content to grow */
+}
+
+/* Header Styles */
+#header {
+    background-color: #000000;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.nav-container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.nav-menu {
+    list-style: none;
+}
+
+.nav-menu li {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.nav-menu li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-menu li a:hover {
+    color: #cccccc;
+}
+.category-hero {
+            height: 60vh;
+            background-color: #f8f8f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/api/placeholder/1920/1080');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .category-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #000000, transparent);
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: #fff;
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+  /* Filter Section */
+  .filter-section {
+            padding: 20px 5%;
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 80px;
+            z-index: 900;
+        }
+
+        .filter-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .filter-button {
+            padding: 10px 20px;
+            border: 1px solid #000;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-button:hover,
+        .filter-button.active {
+            background: #000;
+            color: #fff;
+        }
+
+          /* Filter Section */
+          .filter-section {
+            padding: 20px 5%;
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 80px;
+            z-index: 900;
+        }
+
+        .filter-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .filter-button {
+            padding: 10px 20px;
+            border: 1px solid #000;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-button:hover,
+        .filter-button.active {
+            background: #000;
+            color: #fff;
+        }
+
+        /* Category Grid Layout */
+        .category-grid {
+            padding: 80px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            background-color: #ffffff;
+        }
+
+        .category-card {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            opacity: 1;
+            transform: translateY(0);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .category-card.hidden {
+            display: none;
+        }
+
+        .category-card.fade-out {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .category-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover .category-image {
+            transform: scale(1.1);
+        }
+
+        .category-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            transform: translateY(100px);
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover .category-overlay {
+            transform: translateY(0);
+        }
+
+        .category-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .category-description {
+            font-size: 0.9rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease 0.1s;
+        }
+
+        .category-card:hover .category-description {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* No Results Message */
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px;
+            font-size: 1.2rem;
+            color: #666;
+            display: none;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                width: 90%;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-menu {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                padding: 40px 20px;
+            }
+
+            .category-card {
+                height: 300px;
+            }
+
+            .filter-button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }
+
+        /* Loading Animation */
+        .loading-spinner {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #000;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            z-index: 1000;
+        }
+
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+    
+
+/* Footer Styles */
+#footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 40px 0;
+}
+
+.footer-container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex-basis: calc(33.33% - 40px);
+    margin: 20px;
+}
+
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.footer-section p {
+    color: #cccccc;
+    line-height: 1.8;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 40px;
+    color: #cccccc;
+    font-size: 14px;
+}
+</style>
+
+<script>
+const header = document.getElementById('header');
+const filterButtons = document.querySelectorAll('.filter-button');
+const categoryCards = document.querySelectorAll('.category-card');
+const noResults = document.querySelector('.no-results');
+const loadingSpinner = document.querySelector('.loading-spinner');
+const quickView = document.querySelector('.quick-view');
+const quickViewOverlay = document.querySelector('.quick-view-overlay');
+const quickViewClose = document.querySelector('.quick-view-close');
+const newsletterForm = document.getElementById('newsletter-form');
+
+// Header scroll effect
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 50) {
+        header.style.backgroundColor = '#000000';
+    } else {
+        header.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+    }
+});
+
+// Filter functionality
+function filterCategories(category) {
+    // Show loading spinner
+    loadingSpinner.style.display = 'block';
+
+    // Add fade-out class to all cards
+    categoryCards.forEach(card => {
+        card.classList.add('fade-out');
+    });
+
+    // Wait for fade-out animation
+    setTimeout(() => {
+        let visibleCards = 0;
+
+        categoryCards.forEach(card => {
+            if (category === 'all' || card.dataset.category === category) {
+                card.classList.remove('hidden');
+                visibleCards++;
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+
+        // Show/hide no results message
+        noResults.style.display = visibleCards === 0 ? 'block' : 'none';
+
+        // Remove fade-out class and hide loading spinner
+        setTimeout(() => {
+            categoryCards.forEach(card => {
+                if (!card.classList.contains('hidden')) {
+                    card.classList.remove('fade-out');
+                }
+            });
+            loadingSpinner.style.display = 'none';
+        }, 50);
+    }, 300);
+}
+
+// Filter button click handlers
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        // Add active class to clicked button
+        button.classList.add('active');
+        // Filter categories
+        filterCategories(button.dataset.category);
+    });
+});
+
+// Quick View functionality
+function openQuickView(title, description, imageSrc) {
+    quickView.querySelector('h2').textContent = title;
+    quickView.querySelector('p').textContent = description;
+    quickView.querySelector('img').src = imageSrc;
+    quickView.querySelector('img').alt = title;
+    quickView.style.display = 'block';
+    quickViewOverlay.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeQuickView() {
+    quickView.style.display = 'none';
+    quickViewOverlay.style.display = 'none';
+    document.body.style.overflow = '';
+}
+
+// Add click event to category cards for quick view
+categoryCards.forEach(card => {
+    card.addEventListener('click', () => {
+        const title = card.querySelector('.category-title').textContent;
+        const description = card.querySelector('.category-description').textContent;
+        const imageSrc = card.querySelector('.category-image').src;
+        openQuickView(title, description, imageSrc);
+    });
+});
+
+// Quick view close handlers
+quickViewClose.addEventListener('click', closeQuickView);
+quickViewOverlay.addEventListener('click', closeQuickView);
+
+// Close quick view on escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeQuickView();
+});
+
+// Newsletter form submission
+newsletterForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const emailInput = e.target.querySelector('input[type="email"]');
+    const email = emailInput.value;
+    
+    // Simple email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        showNotification('Please enter a valid email address', 'error');
+        return;
+    }
+
+    // Simulate API call
+    showNotification('Subscribing...', 'info');
+    
+    // Simulate successful subscription after delay
+    setTimeout(() => {
+        showNotification('Thank you for subscribing!', 'success');
+        emailInput.value = '';
+    }, 1000);
+});
+
+// Notification system
+function showNotification(message, type = 'info') {
+    // Remove existing notification if any
+    const existingNotification = document.querySelector('.notification');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 15px 25px;
+        background: ${type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#2196F3'};
+        color: white;
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        z-index: 1000;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 0.3s ease;
+    `;
+    notification.textContent = message;
+
+    // Add to DOM
+    document.body.appendChild(notification);
+
+    // Trigger animation
+    setTimeout(() => {
+        notification.style.opacity = '1';
+        notification.style.transform = 'translateY(0)';
+    }, 10);
+
+    // Remove after delay
+    setTimeout(() => {
+        notification.style.opacity = '0';
+        notification.style.transform = 'translateY(-20px)';
+        setTimeout(() => notification.remove(), 300);
+    }, 3000);
+}
+
+// Smooth scroll functionality
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            const headerOffset = header.offsetHeight;
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition - headerOffset;
+
+            window.scrollBy({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Lazy loading for images
+const lazyLoadImages = () => {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                observer.unobserve(img);
+            }
+        });
+    });
+
+    document.querySelectorAll('img.lazy').forEach(img => {
+        imageObserver.observe(img);
+    });
+};
+
+// Initialize lazy loading
+if ('IntersectionObserver' in window) {
+    lazyLoadImages();
+} else {
+    // Fallback for older browsers
+    document.querySelectorAll('img.lazy').forEach(img => {
+        img.src = img.dataset.src;
+        img.classList.remove('lazy');
+    });
+}
+
+// Save filter state in URL and restore on page load
+function updateURLParameter(category) {
+    const url = new URL(window.location);
+    url.searchParams.set('category', category);
+    window.history.pushState({}, '', url);
+}
+
+function restoreFilterState() {
+    const params = new URLSearchParams(window.location.search);
+    const category = params.get('category') || 'all';
+    const button = document.querySelector(`.filter-button[data-category="${category}"]`);
+    if (button) {
+        button.click();
+    }
+}
+
+// Initialize page state
+document.addEventListener('DOMContentLoaded', () => {
+    restoreFilterState();
+});
+
+// Handle browser back/forward
+window.addEventListener('popstate', () => {
+    restoreFilterState();
+});
+
+</script>
